@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hud for SA-MP</title>
+
+    <script src="scripts/index.cjs"></script>
+
+    <style>
+        .hud-progress-bar {
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+        }
+        
+        .hud-progress-bar svg {
+            height: 60px;
+            width: 60px;
+            position: absolute;
+        }
+
+        path.path-bar {
+            stroke-width: 84;
+            fill: none;
+        }
+
+        path.patch-background {
+            stroke-width: 84;
+            fill: none;
+        }
+
+        img.progress-img {
+            height: 52px;
+            width: 59px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <main>
+        <div class="hud-progress-bar" id="progress-bar-hunger">
+            <svg viewBox='0 0 510 310' preserveAspectRatio='none'>
+                <path d='M5,5 505,5 505,305 5,305 5,2.5' class="patch-background" style="stroke: orange;"/>
+                <path d='M5,5 505,5 505,305 5,305 5,2.5' class="path-bar" style="stroke: rgb(160, 104, 0);"/>
+            </svg>
+            
+            <img src="https://cdn-icons-png.flaticon.com/512/737/737967.png" alt="food.png" class="progress-img">
+        </div>
+
+        <div class="hud-progress-bar" id="progress-bar-thirst">
+            <svg viewBox='0 0 510 310' preserveAspectRatio='none'>
+                <path d='M5,5 505,5 505,305 5,305 5,2.5' class="patch-background" style="stroke: blue;"/>
+                <path d='M5,5 505,5 505,305 5,305 5,2.5' class="path-bar" style="stroke: rgb(1, 1, 27);"/>
+            </svg>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/3171/3171001.png" alt="food.png" class="progress-img">
+        </div>
+
+        <div class="hud-progress-bar" id="progress-bar-armour">
+            <svg viewBox='0 0 510 310' preserveAspectRatio='none'>
+                <path d='M5,5 505,5 505,305 5,305 5,2.5' class="patch-background" style="stroke: rgb(255, 96, 96);"/>
+                <path d='M5,5 505,5 505,305 5,305 5,2.5' class="path-bar" style="stroke: rgb(182, 11, 11);"/>
+            </svg>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWHG6lDv5I_354uz59eKeNFrOPzx70adZVMw&usqp=CAU" alt="food.png" class="progress-img">
+        </div>
+
+        <script>
+            setProgressBarValue("progress-bar-hunger", 10, 2);
+            setProgressBarValue("progress-bar-thirst", 50, 2);
+            setProgressBarValue("progress-bar-armour", 100, 2);
+        </script>
+    </main>
+</body>
+</html>
