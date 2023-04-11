@@ -42,9 +42,25 @@
 			right: calc(50% - 50px);
         }
 
+        main {
+            right: 0;
+			width: 44px;
+			padding: 5px;
+			position: fixed;
+            margin-right: 20px; 
+        }
+
+        img.logo {
+            /* width: 137px; */
+            height: 137px;
+			margin: auto;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <img src="https://device-black.github.io/FormosaMP/images/blue-logo.png" class="logo" />
+    </header>
     
     <main>
         <div class="hud-progress-bar" id="progress-bar-hunger">
@@ -75,6 +91,14 @@
         </div>
 
         <script>
+            if (window.screen.width > 480)
+                document.getElementsByTagName("main")[0].style.bottom = "0";
+            
+            if (window.screen.width <= 480)
+                document.getElementsByTagName("main")[0].style.top = "0";
+
+
+
             setProgressBarValue("progress-bar-hunger", 10, 2);
             setProgressBarValue("progress-bar-thirst", 50, 2);
             setProgressBarValue("progress-bar-armour", 100, 2);
