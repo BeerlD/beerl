@@ -17,7 +17,13 @@ function setProgressBarValue(progressid, value, speed=1)
         if (anim[progressid] == undefined)
             return;
         
-        offset -= speed;
+        if (offset - speed < borderLen - borderLen * (value / 100))
+        {
+            offset = borderLen - borderLen * (value / 100)
+        } else {
+            offset -= speed;
+        }
+
         progress.style.strokeDashoffset = offset;
 
         if (offset <= borderLen - borderLen * (value / 100))
